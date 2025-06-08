@@ -1,0 +1,45 @@
+/* Position body as a vertical column */
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Position <main> as a horizontal row */
+main {
+  display: flex;
+  flex-direction: row;
+  flex: auto;
+}
+
+/* <article> takes 2/3 of the space */
+article {
+  flex: 2;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+/* <aside> takes 1/3 of the space */
+aside {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+/* Give some color and padding to header/footer to see them clearly */
+header, footer {
+  background-color: #eee;
+  padding: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
