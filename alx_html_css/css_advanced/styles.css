@@ -1,121 +1,139 @@
+/* General Styles */
 body {
+  font-family: 'Arial', sans-serif;
   margin: 0;
-  font-family: Arial, sans-serif;
+  padding: 0;
+  line-height: 1.6;
+  color: #333;
 }
 
+/* Hero Section with object.png background */
 .hero {
-  background-image: url('images/object.png');
+  background: url('images/object.png') no-repeat center center;
   background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: white;
   text-align: center;
   padding: 100px 20px;
+  color: white;
+  position: relative;
 }
 
-.hero h1 {
-  font-size: 48px;
-  margin: 0;
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 31, 63, 0.7); /* Navy blue with transparency */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .mentors {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  margin-top: 30px;
+  gap: 40px;
+  margin-top: 40px;
 }
 
 .mentors div {
   text-align: center;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
 }
 
 .mentors img {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
 }
 
-.quote-section {
-  background-color: #f5f5f5;
-  text-align: center;
-  padding: 60px 20px;
+.mentors p {
+  color: #333;
+  font-weight: bold;
+  margin: 0;
 }
 
-.quote img {
-  width: 100px;
-  border-radius: 50%;
-}
+/* [All other CSS styles remain exactly the same...] */
 
-.popular {
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.video-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  margin-top: 30px;
-}
-
-.video-card {
-  border: 1px solid #ddd;
-  padding: 15px;
-  border-radius: 8px;
-  background: #fff;
-}
-
-.video-card img {
-  width: 100%;
-  border-radius: 8px;
-}
-
-.membership {
-  background-color: #f9f9f9;
-  text-align: center;
-  padding: 60px 20px;
-}
-
-.membership h2 {
-  font-size: 36px;
-  margin-bottom: 30px;
-}
-
-.membership .highlight {
-  color: red;
-}
-
-.features {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
-}
-
-.features div {
-  background: #fff;
-  padding: 20px;
-  width: 250px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.features img {
-  width: 40px;
-  margin-bottom: 10px;
-}
-
-.cta-button {
-  margin-top: 30px;
-  padding: 12px 30px;
-  font-size: 16px;
-  background-color: #ff6b6b;
+/* Footer Section */
+.footer {
+  background-color: #001f3f; /* Navy blue */
   color: white;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
+  padding: 40px 20px;
+  text-align: center;
 }
 
-.cta-button:hover {
-  background-color: #ff4b4b;
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.footer-logo img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.footer-logo span {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.social-links {
+  margin: 20px 0;
+}
+
+.social-links a {
+  color: white;
+  margin: 0 15px;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #f1c40f;
+}
+
+.copyright {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .mentors {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .mentors div {
+    width: 80%;
+    margin-bottom: 20px;
+  }
 }

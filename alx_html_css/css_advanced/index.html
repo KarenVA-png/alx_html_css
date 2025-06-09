@@ -4,7 +4,322 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Smile School</title>
-  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    /* Hero Section with object.png background */
+    .hero {
+      background: url('images/object.png') no-repeat center center;
+      background-size: cover;
+      text-align: center;
+      padding: 100px 20px;
+      color: white;
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 31, 63, 0.7);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-content p {
+      font-size: 1.5rem;
+      margin-bottom: 40px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .mentors {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    .mentors div {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .mentors img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+
+    .mentors p {
+      color: #333;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    /* Quote Section */
+    .quote-section {
+      background-color: #333;
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .quote img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+
+    blockquote {
+      font-size: 1.5rem;
+      font-style: italic;
+      max-width: 800px;
+      margin: 0 auto 20px;
+    }
+
+    /* Popular Videos */
+    .popular {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .popular h2 {
+      font-size: 2.5rem;
+      margin-bottom: 50px;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .video-card {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .video-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+      margin-bottom: 15px;
+    }
+
+    .video-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+
+    /* Membership Section */
+    .membership {
+      background-color: #e8f4f8;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .membership h2 {
+      font-size: 2.5rem;
+      margin-bottom: 50px;
+    }
+
+    .highlight {
+      color: #f1c40f;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto 40px;
+    }
+
+    .features div {
+      padding: 20px;
+    }
+
+    .features img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 15px;
+    }
+
+    .features h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+
+    .cta-button {
+      background-color: #f1c40f;
+      color: #333;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .cta-button:hover {
+      background-color: #e6b800;
+    }
+
+    /* Comparison FAQ Section */
+    .comparison-faq {
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    .comparison-faq h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 40px;
+      color: #333;
+    }
+
+    .faq-columns {
+      display: flex;
+      gap: 30px;
+    }
+
+    .faq-column {
+      flex: 1;
+      background: #f8f9fa;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .faq-column h3 {
+      text-align: center;
+      color: #2c3e50;
+      border-bottom: 2px solid #f1c40f;
+      padding-bottom: 15px;
+      margin-bottom: 25px;
+    }
+
+    .faq-item {
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .faq-question {
+      font-weight: bold;
+      color: #444;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+
+    .faq-answer {
+      color: #666;
+      line-height: 1.6;
+    }
+
+    /* Footer Section */
+    .footer {
+      background-color: #001f3f;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .footer-logo img {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .footer-logo span {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .social-links {
+      margin: 20px 0;
+    }
+
+    .social-links a {
+      color: white;
+      margin: 0 15px;
+      font-size: 1.5rem;
+      transition: color 0.3s;
+    }
+
+    .social-links a:hover {
+      color: #f1c40f;
+    }
+
+    .copyright {
+      margin-top: 20px;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    @media (max-width: 768px) {
+      .faq-columns {
+        flex-direction: column;
+      }
+      
+      .mentors {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .mentors div {
+        width: 80%;
+        margin-bottom: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -39,7 +354,7 @@
     <div class="quote">
       <img src="images/5.png" alt="Student">
       <blockquote>
-        “Smile School transformed the way I smile — highly recommend!”
+        "Smile School transformed the way I smile — highly recommend!"
       </blockquote>
       <p>- John Doe, Student</p>
     </div>
@@ -100,5 +415,111 @@
     <button class="cta-button">Register For Free</button>
   </section>
 
+  <!-- COMPARISON FAQ SECTION -->
+  <section class="comparison-faq">
+    <h2>Smile School FAQs</h2>
+    
+    <div class="faq-columns">
+      <!-- First Column -->
+      <div class="faq-column">
+        <h3>Getting Started</h3>
+        
+        <div class="faq-item">
+          <div class="faq-question">Is Smile School right for me?</div>
+          <div class="faq-answer">
+            Whether you're self-conscious about your smile or just want to improve your confidence, our program helps everyone from complete beginners to those looking to polish their smile.
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">How do I register?</div>
+          <div class="faq-answer">
+            Simply click the "Register For Free" button above. No payment information required - just your email to create an account.
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">What's the time commitment?</div>
+          <div class="faq-answer">
+            We recommend 15-20 minutes daily, but you can progress at your own pace. Even 5 minutes a day can make a difference.
+          </div>
+        </div>
+      </div>
+      
+      <!-- Second Column -->
+      <div class="faq-column">
+        <h3>Course Features</h3>
+        
+        <div class="faq-item">
+          <div class="faq-question">What makes your approach unique?</div>
+          <div class="faq-answer">
+            We combine dental science with psychology and acting techniques to create natural, confident smiles that look and feel authentic.
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">Do you offer personalized feedback?</div>
+          <div class="faq-answer">
+            Yes! Our community forums and monthly live Q&A sessions allow you to get personalized advice from our expert coaches.
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">Can I track my progress?</div>
+          <div class="faq-answer">
+            Absolutely. Our Smile Tracker tool helps you document your journey with before/after comparisons and milestone markers.
+          </div>
+        </div>
+      </div>
+      
+      <!-- Third Column -->
+      <div class="faq-column">
+        <h3>Technical Details</h3>
+        
+        <div class="faq-item">
+          <div class="faq-question">What devices are supported?</div>
+          <div class="faq-answer">
+            Our platform works on all devices - smartphones, tablets, laptops, and desktop computers with modern web browsers.
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">Is there an app?</div>
+          <div class="faq-answer">
+            Currently we're web-based, but our site is mobile-friendly. We're developing native apps for iOS and Android coming soon!
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">What if I have technical issues?</div>
+          <div class="faq-answer">
+            Our support team is available 24/7 via email at help@smileschool.com, with average response times under 2 hours.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER SECTION -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="images/smile.png" alt="Smile School Logo">
+        <span>SmileSchool</span>
+      </div>
+      <div class="social-links">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <div class="copyright">
+        ©smileschool 2020
+      </div>
+    </div>
+  </footer>
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </body>
 </html>
