@@ -51,12 +51,12 @@
       width: 200px;
     }
 
-    /* Hero Section with object.png background */
+    /* Updated Hero Section with object.png background */
     .hero {
       background: url('images/object.png') no-repeat center center;
       background-size: cover;
       text-align: center;
-      padding: 100px 20px;
+      padding: 120px 20px 100px;
       color: white;
       position: relative;
     }
@@ -77,22 +77,41 @@
     }
 
     .hero h1 {
-      font-size: 3rem;
+      font-size: 60px;
+      font-weight: bold;
       margin-bottom: 20px;
+      letter-spacing: 1px;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
 
     .hero p {
-      font-size: 1.5rem;
+      font-size: 24px;
+      opacity: 0.9;
       margin-bottom: 40px;
       text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-button {
+      background-color: #C271FF;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .hero-button:hover {
+      background-color: #9a4dff;
     }
 
     .mentors {
       display: flex;
       justify-content: center;
       gap: 40px;
-      margin-top: 40px;
+      margin-top: 80px;
       flex-wrap: wrap;
     }
 
@@ -122,7 +141,7 @@
 
     /* Quote Section - Purple Background */
     .quote-section {
-      background-color: #6a0dad; /* Purple */
+      background-color: #6a0dad;
       color: white;
       padding: 80px 20px;
       text-align: center;
@@ -236,7 +255,7 @@
 
     /* Membership Section - Navy Blue Background */
     .membership {
-      background-color: #001f3f; /* Navy blue */
+      background-color: #001f3f;
       padding: 80px 20px;
       text-align: center;
       color: white;
@@ -428,6 +447,14 @@
       .faq-columns {
         flex-direction: column;
       }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .hero p {
+        font-size: 20px;
+      }
     }
   </style>
 </head>
@@ -443,11 +470,13 @@
     </div>
   </header>
 
-  <!-- Hero Section with object.png background -->
+  <!-- Updated Hero Section with object.png background -->
   <section class="hero">
     <div class="hero-content">
       <h1>Get Schooled</h1>
-      <p>Learn to smile with confidence</p>
+      <p>Learn from the prior</p>
+      <button class="hero-button">REGISTER FOR FREE</button>
+      
       <div class="mentors">
         <div class="mentor-card">
           <img src="images/1.png" alt="Phillip Massey">
@@ -592,7 +621,7 @@
 
   <!-- FAQ Section -->
   <section class="comparison-faq">
-    <h2>Smile School FAQs</h2>
+    <h2>FAQs</h2>
     
     <div class="faq-columns">
       <!-- First Column -->
