@@ -14,6 +14,43 @@
       color: #333;
     }
 
+    /* Header Styles */
+    header {
+      background-color: #001f3f;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .logo {
+      color: white;
+      font-size: 1.5rem;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+    }
+
+    .search-bar {
+      display: flex;
+      align-items: center;
+    }
+
+    .search-bar input {
+      padding: 8px 15px;
+      border-radius: 20px;
+      border: none;
+      outline: none;
+      width: 200px;
+    }
+
     /* Hero Section with object.png background */
     .hero {
       background: url('images/object.png') no-repeat center center;
@@ -39,13 +76,13 @@
       z-index: 1;
     }
 
-    .hero-content h1 {
+    .hero h1 {
       font-size: 3rem;
       margin-bottom: 20px;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
 
-    .hero-content p {
+    .hero p {
       font-size: 1.5rem;
       margin-bottom: 40px;
       text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
@@ -56,32 +93,36 @@
       justify-content: center;
       gap: 40px;
       margin-top: 40px;
+      flex-wrap: wrap;
     }
 
-    .mentors div {
+    .mentor-card {
       text-align: center;
       background: rgba(255, 255, 255, 0.9);
       padding: 20px;
       border-radius: 10px;
+      max-width: 200px;
     }
 
-    .mentors img {
-      width: 150px;
-      height: 150px;
+    .mentor-card img {
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
       object-fit: cover;
       margin-bottom: 15px;
+      border: 3px solid #f1c40f;
     }
 
-    .mentors p {
-      color: #333;
+    .mentor-name {
       font-weight: bold;
-      margin: 0;
+      font-size: 1.2rem;
+      color: #001f3f;
+      margin: 10px 0;
     }
 
-    /* Quote Section */
+    /* Quote Section - Purple Background */
     .quote-section {
-      background-color: #333;
+      background-color: #6a0dad; /* Purple */
       color: white;
       padding: 80px 20px;
       text-align: center;
@@ -101,7 +142,7 @@
       margin: 0 auto 20px;
     }
 
-    /* Popular Videos */
+    /* Popular Videos Section */
     .popular {
       padding: 80px 20px;
       text-align: center;
@@ -122,28 +163,83 @@
 
     .video-card {
       background: #f8f9fa;
-      padding: 20px;
+      padding: 0;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      position: relative;
+      overflow: hidden;
     }
 
-    .video-card img {
+    .video-thumbnail {
+      position: relative;
+    }
+
+    .video-thumbnail img {
       width: 100%;
       height: auto;
-      border-radius: 5px;
+      border-radius: 8px 8px 0 0;
+      display: block;
+    }
+
+    .play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50px;
+      height: 50px;
+    }
+
+    .video-info {
+      padding: 20px;
+    }
+
+    .video-info h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: #001f3f;
+    }
+
+    .video-info p {
+      color: #666;
       margin-bottom: 15px;
     }
 
-    .video-card h3 {
-      font-size: 1.3rem;
+    .video-author {
+      display: flex;
+      align-items: center;
       margin-bottom: 10px;
     }
 
-    /* Membership Section */
+    .video-author img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    .video-rating {
+      display: flex;
+      align-items: center;
+    }
+
+    .video-rating img {
+      width: 100px;
+      height: 20px;
+      margin-right: 10px;
+    }
+
+    .video-rating span {
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    /* Membership Section - Navy Blue Background */
     .membership {
-      background-color: #e8f4f8;
+      background-color: #001f3f; /* Navy blue */
       padding: 80px 20px;
       text-align: center;
+      color: white;
     }
 
     .membership h2 {
@@ -171,11 +267,17 @@
       width: 60px;
       height: 60px;
       margin-bottom: 15px;
+      filter: brightness(0) invert(1);
     }
 
     .features h3 {
       font-size: 1.3rem;
       margin-bottom: 10px;
+      color: white;
+    }
+
+    .features p {
+      color: #ccc;
     }
 
     .cta-button {
@@ -193,7 +295,7 @@
       background-color: #e6b800;
     }
 
-    /* Comparison FAQ Section */
+    /* FAQ Section - Comparison Columns */
     .comparison-faq {
       max-width: 1200px;
       margin: 50px auto;
@@ -305,8 +407,9 @@
     }
 
     @media (max-width: 768px) {
-      .faq-columns {
+      header {
         flex-direction: column;
+        gap: 15px;
       }
       
       .mentors {
@@ -314,42 +417,59 @@
         align-items: center;
       }
       
-      .mentors div {
-        width: 80%;
-        margin-bottom: 20px;
+      .mentor-card {
+        margin-bottom: 30px;
+      }
+      
+      .video-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .faq-columns {
+        flex-direction: column;
       }
     }
   </style>
 </head>
 <body>
+  <!-- Header Section -->
+  <header>
+    <div class="logo">
+      <img src="images/smile.png" alt="Logo">
+      <span>SmileSchool</span>
+    </div>
+    <div class="search-bar">
+      <input type="text" placeholder="Type here to search">
+    </div>
+  </header>
 
-  <!-- HERO SECTION WITH object.png BACKGROUND -->
+  <!-- Hero Section with object.png background -->
   <section class="hero">
     <div class="hero-content">
       <h1>Get Schooled</h1>
       <p>Learn to smile with confidence</p>
       <div class="mentors">
-        <div>
-          <img src="images/1.png" alt="Mentor 1">
-          <p>Phillip Massey</p>
+        <div class="mentor-card">
+          <img src="images/1.png" alt="Phillip Massey">
+          <div class="mentor-name">Phillip Massey</div>
         </div>
-        <div>
-          <img src="images/2.png" alt="Mentor 2">
-          <p>Nannie Lawrence</p>
+        <div class="mentor-card">
+          <img src="images/2.png" alt="Nannie Lawrence">
+          <div class="mentor-name">Nannie Lawrence</div>
         </div>
-        <div>
-          <img src="images/3.png" alt="Mentor 3">
-          <p>Bruce Walsh</p>
+        <div class="mentor-card">
+          <img src="images/3.png" alt="Bruce Walsh">
+          <div class="mentor-name">Bruce Walsh</div>
         </div>
-        <div>
-          <img src="images/4.png" alt="Mentor 4">
-          <p>Henry Hughes</p>
+        <div class="mentor-card">
+          <img src="images/4.png" alt="Henry Hughes">
+          <div class="mentor-name">Henry Hughes</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- QUOTE SECTION -->
+  <!-- Quote Section with Purple Background -->
   <section class="quote-section">
     <div class="quote">
       <img src="images/5.png" alt="Student">
@@ -360,34 +480,89 @@
     </div>
   </section>
 
-  <!-- POPULAR VIDEOS -->
+  <!-- Popular Videos Section -->
   <section class="popular">
     <h2>Most popular tutorials</h2>
     <div class="video-grid">
       <div class="video-card">
-        <img src="images/6.png" alt="Video 1">
-        <h3>Natural Smile</h3>
-        <p>Learn how to smile naturally with confidence.</p>
+        <div class="video-thumbnail">
+          <img src="images/6.png" alt="Natural Smile">
+          <img src="images/play.png" alt="Play" class="play-button">
+        </div>
+        <div class="video-info">
+          <h3>Natural Smile</h3>
+          <p>Learn how to smile naturally with confidence.</p>
+          <div class="video-author">
+            <img src="images/1.png" alt="Phillip Massey">
+            <span>Phillip Massey</span>
+          </div>
+          <div class="video-rating">
+            <img src="images/rating.png" alt="Rating">
+            <span>8.5/10</span>
+          </div>
+        </div>
       </div>
+      
       <div class="video-card">
-        <img src="images/7.png" alt="Video 2">
-        <h3>Happy Smile</h3>
-        <p>Tips to keep your smile bright and cheerful.</p>
+        <div class="video-thumbnail">
+          <img src="images/7.png" alt="Happy Smile">
+          <img src="images/play.png" alt="Play" class="play-button">
+        </div>
+        <div class="video-info">
+          <h3>Happy Smile</h3>
+          <p>Tips to keep your smile bright and cheerful.</p>
+          <div class="video-author">
+            <img src="images/2.png" alt="Nannie Lawrence">
+            <span>Nannie Lawrence</span>
+          </div>
+          <div class="video-rating">
+            <img src="images/rating.png" alt="Rating">
+            <span>9.0/10</span>
+          </div>
+        </div>
       </div>
+      
       <div class="video-card">
-        <img src="images/8.png" alt="Video 3">
-        <h3>Confident Smile</h3>
-        <p>Build confidence and smile openly in any situation.</p>
+        <div class="video-thumbnail">
+          <img src="images/8.png" alt="Confident Smile">
+          <img src="images/play.png" alt="Play" class="play-button">
+        </div>
+        <div class="video-info">
+          <h3>Confident Smile</h3>
+          <p>Build confidence and smile openly in any situation.</p>
+          <div class="video-author">
+            <img src="images/3.png" alt="Bruce Walsh">
+            <span>Bruce Walsh</span>
+          </div>
+          <div class="video-rating">
+            <img src="images/rating.png" alt="Rating">
+            <span>8.2/10</span>
+          </div>
+        </div>
       </div>
+      
       <div class="video-card">
-        <img src="images/9.png" alt="Video 4">
-        <h3>Smiling with Eyes</h3>
-        <p>Master the art of smiling with your whole face.</p>
+        <div class="video-thumbnail">
+          <img src="images/9.png" alt="Smiling with Eyes">
+          <img src="images/play.png" alt="Play" class="play-button">
+        </div>
+        <div class="video-info">
+          <h3>Smiling with Eyes</h3>
+          <p>Master the art of smiling with your whole face.</p>
+          <div class="video-author">
+            <img src="images/4.png" alt="Henry Hughes">
+            <span>Henry Hughes</span>
+          </div>
+          <div class="video-rating">
+            <img src="images/rating.png" alt="Rating">
+            <span>9.5/10</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- FREE MEMBERSHIP -->
+  <!-- Membership Section with Navy Blue Background -->
   <section class="membership">
     <h2><span class="highlight">Free</span> membership</h2>
     <div class="features">
@@ -415,7 +590,7 @@
     <button class="cta-button">Register For Free</button>
   </section>
 
-  <!-- COMPARISON FAQ SECTION -->
+  <!-- FAQ Section -->
   <section class="comparison-faq">
     <h2>Smile School FAQs</h2>
     
@@ -500,7 +675,7 @@
     </div>
   </section>
 
-  <!-- FOOTER SECTION -->
+  <!-- Footer Section -->
   <footer class="footer">
     <div class="footer-content">
       <div class="footer-logo">
