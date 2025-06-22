@@ -1,0 +1,297 @@
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+}
+
+/* Header */
+header {
+  background-color: #001f3f;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.search-bar input {
+  padding: 8px 15px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  width: 200px;
+}
+
+/* Hero Section */
+.hero {
+  background: url('images/object.png') no-repeat center center;
+  background-size: cover;
+  text-align: center;
+  padding: 100px 20px;
+  color: white;
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 31, 63, 0.7);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+}
+
+.mentors {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.mentors div {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.mentors img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+/* Quote Section */
+.quote-section {
+  background-color: #7c4dff; /* Updated purple background */
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.quote img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+blockquote {
+  font-size: 1.5rem;
+  font-style: italic;
+  max-width: 800px;
+  margin: 0 auto 20px;
+}
+
+.quote p {
+  color: #f1c40f; /* Yellow name text for contrast */
+  font-weight: bold;
+}
+
+/* Popular Videos */
+.popular {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.popular h2 {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.video-card {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.video-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.video-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #001f3f;
+}
+
+/* Membership Section */
+.membership {
+  background-color: #e8f4f8;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.membership h2 {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+}
+
+.highlight {
+  color: #f1c40f;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto 40px;
+}
+
+.features div {
+  padding: 20px;
+}
+
+.features img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+.cta-button {
+  background-color: #f1c40f;
+  color: #001f3f;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* FAQ Section */
+.comparison-faq {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.comparison-faq h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.faq-columns {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.faq-column {
+  flex: 1;
+  background: #f8f9fa;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.faq-question {
+  font-weight: bold;
+  color: #001f3f;
+  margin-bottom: 10px;
+}
+
+.faq-answer {
+  color: #666;
+}
+
+/* Footer */
+.footer {
+  background-color: #001f3f;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.footer-logo img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.social-links a {
+  color: white;
+  margin: 0 15px;
+  font-size: 1.5rem;
+}
+
+.social-links a:hover {
+  color: #f1c40f;
+}
+
+.copyright {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .faq-columns {
+    flex-direction: column;
+  }
+  .mentors {
+    flex-direction: column;
+  }
+}
