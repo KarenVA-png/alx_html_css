@@ -1,0 +1,103 @@
+/* ===== ANIMATIONS ===== */
+/* Pulse Animation */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Rotate Animation */
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Float Animation */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+/* Glow Animation */
+@keyframes glow {
+    0%, 100% { box-shadow: 0 0 5px #FF6565; }
+    50% { box-shadow: 0 0 20px #FF6565; }
+}
+
+/* Shake Animation */
+@keyframes shake {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-5deg); }
+    75% { transform: rotate(5deg); }
+}
+
+/* ===== SERVICE CARDS ===== */
+.service-card {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+/* Animation Classes */
+.pulse { animation: pulse 2s infinite; }
+.rotate { animation: rotate 4s linear infinite; }
+.bounce { animation: bounce 2s ease infinite; }
+.float { animation: float 3s ease-in-out infinite; }
+.glow { animation: glow 2s ease infinite; }
+.shake { animation: shake 0.5s ease infinite; }
+
+/* Hover Effects */
+.service-card:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* ===== PENTAGONS ===== */
+.pentagon {
+    width: 180px;
+    height: 180px;
+    background: #FF6565;
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.pentagon:hover {
+    animation: none !important;
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* ===== LAYOUT ===== */
+.services-grid, .pentagon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .services-grid, .pentagon-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .services-grid, .pentagon-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Slow down animations on mobile */
+    .pulse, .rotate, .bounce, .float, .glow, .shake {
+        animation-duration: 3s;
+    }
+}
